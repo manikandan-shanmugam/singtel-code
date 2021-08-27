@@ -7,20 +7,34 @@ class Animal {
     }
 }
 
-class Duck extends Bird{
+class Duck extends Bird {
 
-    public boolean swim(){
+    public boolean swim() {
         System.out.println("I am swimming");
         return true;
     }
 
 }
 
-class Chicken extends Bird{
+class Chicken extends Bird {
+
+    String sound;
 
     @Override
     public boolean fly() {
         return false;
+    }
+
+    // consider rooster only have sound different
+    public boolean sing(String type) {
+        switch (type) {
+            case "Rooster":
+                sound = "Cock-a-doodle-doo";
+                break;
+            default:
+                sound = "Cluck, cluck";
+        }
+        return super.sing(sound);
     }
 }
 
@@ -39,6 +53,10 @@ public class Solution {
 
         Chicken chicken = new Chicken();
         chicken.fly();
-        chicken.sing("Cluck, cluck");
+        chicken.sing("");
+
+        // to re-use the chicken for rooster, ans for A.3.2 and A.3.3
+        Chicken rooster = new Chicken();
+        rooster.sing("Rooster");
     }
 }
