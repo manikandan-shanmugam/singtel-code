@@ -20,4 +20,21 @@ public class Chicken extends Bird {
         }
         return super.sing(sound);
     }
+
+    public boolean sing(String type, String senLan){
+       if( type=="Rooster") {
+           switch (senLan) {
+               case "Danish":
+                   sound = "kykyliky";
+                   break;
+               case "Tamil": //native tongue
+                   sound = "cookorako";
+                   break;
+               default:
+                   sound = "";
+           }
+       }
+
+        return super.sing(sound);
+    }
 }
