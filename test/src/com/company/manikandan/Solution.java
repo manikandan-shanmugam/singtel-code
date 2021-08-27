@@ -2,8 +2,9 @@ package com.company.manikandan;
 
 class Animal {
 
-    void walk() {
+   public boolean walk() {
         System.out.println("I am walking");
+        return true;
     }
 }
 
@@ -65,6 +66,25 @@ class Parrot extends Bird {
     }
 }
 
+class Fish extends Animal {
+
+    @Override
+   public boolean walk() {
+        System.out.println("I can't walk");
+        return false;
+    }
+
+    public boolean sing(){
+        System.out.println("I can't sing");
+        return false;
+    }
+
+   public boolean swim() {
+        System.out.println("I am Swimming");
+        return true;
+    }
+}
+
 public class Solution {
 
     public static void main(String[] args) {
@@ -86,21 +106,26 @@ public class Solution {
 //        Chicken rooster = new Chicken();
 //        rooster.sing("Rooster");
 
-        Parrot parrotWithDog = new Parrot();
-        parrotWithDog.sing("Dog");
+//        Parrot parrotWithDog = new Parrot();
+//        parrotWithDog.sing("Dog");
+//
+//        Parrot parrotWithCat = new Parrot();
+//        parrotWithDog.sing("Cat");
+//
+//        Parrot parrotWithRooster = new Parrot();
+//        parrotWithDog.sing("Rooster");
+//
+//        // consider 4th parrot with duck
+//        Parrot parrotWithDuck = new Parrot();
+//        parrotWithDog.sing("Duck");
+//
+//        Parrot parrotAlone = new Parrot();
+//        parrotWithDog.sing("");
 
-        Parrot parrotWithCat = new Parrot();
-        parrotWithDog.sing("Cat");
-
-        Parrot parrotWithRooster = new Parrot();
-        parrotWithDog.sing("Rooster");
-
-        // consider 4th parrot with duck
-        Parrot parrotWithDuck = new Parrot();
-        parrotWithDog.sing("Duck");
-
-        Parrot parrotAlone = new Parrot();
-        parrotWithDog.sing("");
+        Fish fish = new Fish();
+        fish.walk();
+        fish.sing();
+        fish.swim();
 
     }
 }
