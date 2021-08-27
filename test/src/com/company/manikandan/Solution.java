@@ -38,25 +38,69 @@ class Chicken extends Bird {
     }
 }
 
+
+class Parrot extends Bird {
+    String sound;
+
+    @Override
+    public boolean sing(String livingWith) {
+
+        switch (livingWith) {
+            case "Dog":
+                sound = "Woof, woof";
+                break;
+            case "Cat":
+                sound = "Me ow";
+                break;
+            case "Rooster":
+                sound = "Cock-a-doodle-doo";
+                break;
+            case "Duck":
+                sound = "Quack , quack";
+                break;
+            default:
+                sound = "";
+        }
+        return super.sing(sound);
+    }
+}
+
 public class Solution {
 
     public static void main(String[] args) {
 
-        Bird bird = new Bird();
-        bird.walk();
-        bird.fly();
-        bird.sing("");
-
-        Duck duck = new Duck();
-        duck.swim();
-        duck.sing("Quack , quack");
-
-        Chicken chicken = new Chicken();
-        chicken.fly();
-        chicken.sing("");
+//        Bird bird = new Bird();
+//        bird.walk();
+//        bird.fly();
+//        bird.sing("");
+//
+//        Duck duck = new Duck();
+//        duck.swim();
+//        duck.sing("Quack , quack");
+//
+//        Chicken chicken = new Chicken();
+//        chicken.fly();
+//        chicken.sing("");
 
         // to re-use the chicken for rooster, ans for A.3.2 and A.3.3
-        Chicken rooster = new Chicken();
-        rooster.sing("Rooster");
+//        Chicken rooster = new Chicken();
+//        rooster.sing("Rooster");
+
+        Parrot parrotWithDog = new Parrot();
+        parrotWithDog.sing("Dog");
+
+        Parrot parrotWithCat = new Parrot();
+        parrotWithDog.sing("Cat");
+
+        Parrot parrotWithRooster = new Parrot();
+        parrotWithDog.sing("Rooster");
+
+        // consider 4th parrot with duck
+        Parrot parrotWithDuck = new Parrot();
+        parrotWithDog.sing("Duck");
+
+        Parrot parrotAlone = new Parrot();
+        parrotWithDog.sing("");
+
     }
 }
