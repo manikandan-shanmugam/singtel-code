@@ -23,3 +23,12 @@ This assignment is to find out the animal's behavior.
                      w=wlak
                      sw=swim
 ```
+
+```
+consider you have java env and git in your laptop, to run this code.
+
+git clone this repo. 
+in "test" dir please find "Solution.java"
+
+run the Main() method. it will printout all counts of how many animals can fly, walk,sing,swim.
+```
