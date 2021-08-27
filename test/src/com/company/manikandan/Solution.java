@@ -103,10 +103,27 @@ class Clownfish extends Fish {
 
 class Dolphin extends Animal {
 
-   public boolean swim() {
+    public boolean swim() {
         System.out.println("I am Swimming");
         return true;
     }
+}
+
+class Butterfly extends Bird {
+
+    @Override
+    public boolean sing(String sound) {
+        System.out.println("I can't sing");
+        return false;
+    }
+}
+
+class Caterpillar extends Animal {
+
+    public boolean fly() {
+        return false;
+    }
+
 }
 
 public class Solution {
@@ -146,10 +163,18 @@ public class Solution {
 //        Parrot parrotAlone = new Parrot();
 //        parrotWithDog.sing("");
 
-        Fish fish = new Fish();
-        fish.walk();
-        fish.sing();
-        fish.swim();
+//        Fish fish = new Fish();
+//        fish.walk();
+//        fish.sing();
+//        fish.swim();
+
+        Butterfly butterfly= new Butterfly();
+        butterfly.fly();
+        butterfly.sing("butterfly sound");
+
+        Caterpillar caterpillar= new Caterpillar();
+        caterpillar.fly();
+        caterpillar.walk();
 
     }
 }
