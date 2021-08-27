@@ -93,16 +93,12 @@ public class Solution {
 
 
         System.out.println(String.format("%s animals can fly", flyCount));
-        System.out.println(String.format("%s animals can walk",walkCount));
+        System.out.println(String.format("%s animals can walk", walkCount));
         System.out.println(String.format("%s animals can swim", swimCount));
         System.out.println(String.format("%s animals can sing", singCount));
 
     }
 
-
-
-
-
-
-
 }
+
+// time over 
