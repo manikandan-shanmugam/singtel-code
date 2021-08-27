@@ -1,11 +1,17 @@
 package com.company.manikandan;
 
-class Animal {
+abstract class Animal {
 
-    public boolean walk() {
-        System.out.println("I am walking");
-        return true;
-    }
+    abstract boolean walk();
+
+
+    abstract boolean fly();
+
+
+    abstract boolean sing(String sound);
+
+
+    abstract boolean swim();
 }
 
 class Duck extends Bird {
@@ -74,8 +80,13 @@ class Fish extends Animal {
         return false;
     }
 
-    public boolean sing() {
-        System.out.println("I can't sing");
+    @Override
+   public boolean fly() {
+        return false;
+    }
+
+    @Override
+    public boolean sing(String sound) {
         return false;
     }
 
@@ -103,6 +114,22 @@ class Clownfish extends Fish {
 
 class Dolphin extends Animal {
 
+    @Override
+   public boolean walk() {
+        System.out.println("I can't walk");
+        return false;
+    }
+
+    @Override
+   public boolean fly() {
+        return false;
+    }
+
+    @Override
+   public boolean sing(String sound) {
+        return false;
+    }
+
     public boolean swim() {
         System.out.println("I am Swimming");
         return true;
@@ -120,10 +147,82 @@ class Butterfly extends Bird {
 
 class Caterpillar extends Animal {
 
-    public boolean fly() {
+    @Override
+   public boolean walk() {
+        return true;
+    }
+
+    @Override
+   public boolean fly() {
         return false;
     }
 
+    @Override
+   public boolean sing(String sound) {
+        return false;
+    }
+
+    @Override
+   public boolean swim() {
+        return false;
+    }
+
+}
+
+// consider frog under fish
+class Frog extends Fish {
+
+    @Override
+    public boolean sing(String sound) {
+        return true; // it can sing
+    }
+}
+
+// based on real logic
+class Dog extends Animal {
+
+    @Override
+   public boolean walk() {
+        return true;
+    }
+
+    @Override
+   public boolean fly() {
+        return false;
+    }
+
+    @Override
+   public boolean sing(String sound) {
+        return true;
+    }
+
+    @Override
+   public boolean swim() {
+        return true;
+    }
+}
+
+class Cat extends Animal {
+
+    @Override
+   public boolean walk() {
+        return true;
+    }
+
+    @Override
+   public boolean fly() {
+        return false;
+    }
+
+    @Override
+   public boolean sing(String sound) {
+        return true;
+    }
+
+    @Override
+   public boolean swim() {
+        return false;
+    }
 }
 
 public class Solution {
@@ -168,13 +267,66 @@ public class Solution {
 //        fish.sing();
 //        fish.swim();
 
-        Butterfly butterfly= new Butterfly();
-        butterfly.fly();
-        butterfly.sing("butterfly sound");
+//        Butterfly butterfly = new Butterfly();
+//        butterfly.fly();
+//        butterfly.sing("butterfly sound");
+//
+//        Caterpillar caterpillar = new Caterpillar();
+//        caterpillar.fly();
+//        caterpillar.walk();
 
-        Caterpillar caterpillar= new Caterpillar();
-        caterpillar.fly();
-        caterpillar.walk();
+        Animal[] animals = new Animal[]{
+                new Bird(),
+                new Duck(),
+                new Chicken(),
+                new Chicken(),// for rooster
+                new Parrot(),
+                new Fish(),
+                new Shark(),
+                new Clownfish(),
+                new Dolphin(),
+                new Butterfly(),
+                new Frog(),
+                new Dog(),
+                new Cat(),
+        };
+
+        int flyCount = 0;
+        int walkCount = 0;
+        int swimCount = 0;
+        int singCount = 0;
+
+        for (Animal animal : animals) {
+
+            if (animal.fly()) {
+                flyCount++;
+            }
+
+            if (animal.walk()) {
+                walkCount++;
+            }
+
+            if (animal.swim()) {
+                swimCount++;
+            }
+
+            if (animal.sing("")) {
+                singCount++;
+            }
+        }
+
+
+        System.out.println(String.format("%s animals can fly", flyCount));
+        System.out.println(String.format("%s animals can walk",walkCount));
+        System.out.println(String.format("%s animals can swim", swimCount));
+        System.out.println(String.format("%s animals can sing", singCount));
 
     }
+
+
+
+
+
+
+
 }
