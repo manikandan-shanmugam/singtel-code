@@ -2,7 +2,7 @@ package com.company.manikandan;
 
 class Animal {
 
-   public boolean walk() {
+    public boolean walk() {
         System.out.println("I am walking");
         return true;
     }
@@ -69,19 +69,35 @@ class Parrot extends Bird {
 class Fish extends Animal {
 
     @Override
-   public boolean walk() {
+    public boolean walk() {
         System.out.println("I can't walk");
         return false;
     }
 
-    public boolean sing(){
+    public boolean sing() {
         System.out.println("I can't sing");
         return false;
     }
 
-   public boolean swim() {
+    public boolean swim() {
         System.out.println("I am Swimming");
         return true;
+    }
+}
+
+class Shark extends Fish {
+
+    // we can't use the size, color,other props in logic, so make it as info in constructor
+    Shark() {
+        System.out.println("I am large, grey and eat other fish");
+    }
+}
+
+class Clownfish extends Fish {
+
+    // we can't use the size, color,other props in logic, so make it as info in constructor
+    Clownfish() {
+        System.out.println("I am small, orange in color and make jokes");
     }
 }
 
