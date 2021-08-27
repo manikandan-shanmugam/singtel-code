@@ -7,8 +7,8 @@ public class Bird extends Animal {
 
     }
 
-    public boolean sing() {
-        System.out.println("I am singing");
+    public boolean sing(String sound) {
+        System.out.println(String.format("I am singing %s",sound).trim());
         return true;
     }
 }
